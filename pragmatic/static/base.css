@@ -1,0 +1,17 @@
+.top {
+    text-align:center;
+    margin:2rem 0;
+}
+
+.bottom {
+    text-align:center;
+    margin-top:2rem;
+}
+
+.logo {
+    font-family: 'Lobster Two', cursive;
+}
+
+.bottom_button {
+    font-size: .6rem;
+}

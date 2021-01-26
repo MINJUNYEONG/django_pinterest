@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def hello_world(request):
-    return HttpResponse("Hello World!")
+
+    if request.method == "POST":
+        return render(request, 'accountapp/helloworld.html', context={'text': 'POST METHOD!!!'})
+    else:
+        return render(request, 'accountapp/helloworld.html', context={'text': 'GET METHOD!!!'})
