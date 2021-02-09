@@ -30,12 +30,14 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
+
 @method_decorator(has_ownership, 'get')
-@method_decorator(has_ownership, 'post')
+#@method_decorator(has_ownership, 'post')
 class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
+
 
 @method_decorator(has_ownership, 'get')
 @method_decorator(has_ownership, 'post')
@@ -45,6 +47,7 @@ class AccountUpdateView(UpdateView):
     form_class = AccountUpdateForm
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/update.html'
+
 
 @method_decorator(has_ownership, 'get')
 @method_decorator(has_ownership, 'post')
