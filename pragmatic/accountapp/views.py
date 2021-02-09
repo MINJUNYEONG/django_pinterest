@@ -12,6 +12,7 @@ from accountapp.forms import AccountUpdateForm
 
 has_ownership = [account_ownership_required, login_required]
 
+
 @login_required
 def hello_world(request):
     if request.user.is_authenticated:
@@ -22,8 +23,7 @@ def hello_world(request):
 
 
 # reverse와 reverse_lazy 차이는 class와 def 에서 쓸 수 있냐 없냐의 차이
-@method_decorator(has_ownership, 'get')
-@method_decorator(has_ownership, 'post')
+
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
@@ -31,8 +31,6 @@ class AccountCreateView(CreateView):
     template_name = 'accountapp/create.html'
 
 
-@method_decorator(has_ownership, 'get')
-#@method_decorator(has_ownership, 'post')
 class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user'
