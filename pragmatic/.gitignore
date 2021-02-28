@@ -83,6 +83,7 @@ __pycache__/
 
 media/
 
-.pem
+/aws_pragmatic_key.pempem
+/aws_pragmatic_key.ppk
 
-Dockerfile
+/Dockerfile
