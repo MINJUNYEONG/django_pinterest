@@ -86,4 +86,6 @@ media/
 aws_pragmatic_key.pem
 aws_pragmatic_key.ppk
 
-Dockerfile
+docker-compose.yml
+
+nginx.conf

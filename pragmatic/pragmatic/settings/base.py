@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
-
 import os, environ
 
 from django.urls import reverse_lazy
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     'commentapp',
     'projectapp',
     'subscriptionapp',
+    'likeapp',
 ]
 
 MIDDLEWARE = [

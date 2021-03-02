@@ -18,6 +18,17 @@
             {{ target_article.content | safe }}
         </div>
 
+        <div style="height: 3rem; text-align: right;">
+            <a href="{% url 'likeapp:article_like' pk=target_article.pk %}">
+                <i class="material-icons" style="color: #ED1A3D; vertical-align: middle; font-size: 1.2rem;" >
+                    favorite
+                </i>
+            </a>
+            <span style="vertical-align: middle; font-size: 1.2rem; ">
+                {{ target_article.like }}
+            </span>
+        </div>
+
         {% if target_article.writer == user %}
         <a href="{% url 'articleapp:update' pk=target_article.pk %}" class="btn btn-primary rounded-pill col-3">
            Update

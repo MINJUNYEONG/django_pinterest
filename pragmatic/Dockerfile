@@ -1,10 +1,20 @@
 FROM python:3.9.0
 
+RUN mkdir /root/.ssh/
+
+ADD ./.ssh/id_rsa /root/.ssh/id_rsa
+
+RUN chmod 600 /root/.ssh/id_rsa
+
+RUN touch /root/.ssh/known_hosts
+
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+
 WORKDIR /home/
 
 RUN echo "testing1234"
 
-RUN git clone https://github.com/MINJUNYEONG/django_pinterest.git
+RUN git clone git@github.com:MINJUNYEONG/django_pinterest.git
 
 WORKDIR /home/django_pinterest/pragmatic
 
