@@ -12,6 +12,7 @@
 |Comment App|댓글 구현|
 |Subscribe App|구독 구현|
 |Like App|좋아요 구현|
+|Pagination Function|페이지 구현|
 |WYSIWYG|위지위그 구현|
 
 ## 3. 기술 Stack
