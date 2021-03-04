@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
-    path('articles/', include('articleapp.urls')),
+    path('articles/', include('articleapp.urls', namespace='article')),
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
     path('subscriptions/', include('subscriptionapp.urls')),

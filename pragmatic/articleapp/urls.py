@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 
 from articleapp.views import ArticleCreateView, ArticleDetailView, ArticleUpdateView, ArticleDeleteView, ArticleListView
 
-app_name = 'articleapp'
+app_name = "articleapp"
 
 urlpatterns = [
     path('list/', ArticleListView.as_view(), name='list'),

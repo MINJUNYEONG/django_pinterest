@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DetailView, UpdateView, ListView
-from django.views.generic.edit import FormMixin
+from django.views.generic.edit import FormMixin, DeleteView
 
 from articleapp.decorators import article_ownership_required
 from articleapp.forms import ArticleCreationForm
@@ -50,8 +50,8 @@ class ArticleUpdateView(UpdateView):
 
 
 @method_decorator(article_ownership_required, 'get')
-# @method_decorator(article_ownership_required, 'post')
-class ArticleDeleteView(DetailView):
+@method_decorator(article_ownership_required, 'post')
+class ArticleDeleteView(DeleteView):
     model = Article
     context_object_name = 'target_article'
     success_url = reverse_lazy('article:list')
